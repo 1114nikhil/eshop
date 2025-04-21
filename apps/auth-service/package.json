@@ -74,5 +74,11 @@
         "command": "docker build -f apps/auth-service/Dockerfile . -t auth-service"
       }
     }
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express-http-proxy": "^1.6.6",
+    "@types/morgan": "^1.9.9",
+    "@types/swagger-ui-express": "^4.1.8"
   }
 }
