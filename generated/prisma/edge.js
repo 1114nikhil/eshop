@@ -125,7 +125,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Nikhil\\pactice\\eshop\\generated\\prisma",
+      "value": "/Users/nikhiltk/development/node/eshop/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -134,17 +134,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Nikhil\\pactice\\eshop\\prisma\\schema.prisma",
+    "sourceFilePath": "/Users/nikhiltk/development/node/eshop/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.6.0",
@@ -153,11 +152,12 @@ const config = {
     "db"
   ],
   "activeProvider": "mongodb",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mongodb+srv://eshop:eshop@ecommerce.bodru7q.mongodb.net/development"
+        "value": null
       }
     }
   },

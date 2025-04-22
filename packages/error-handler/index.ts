@@ -22,7 +22,7 @@ export class NotFoundError extends AppError{
 
 //#region Validation Error
 export class ValidationError extends AppError{
-    constructor(message="Invalid request data",details:any){
+    constructor(message="Invalid request data",details?:any){
         super(message,400,true,details)
     }
 }
