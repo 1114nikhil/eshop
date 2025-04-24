@@ -2,47 +2,14 @@
   "name": "@./auth-service",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "node src/main.ts"
+  },
   "nx": {
     "name": "auth-service",
+    "projectType": "application",
+    "sourceRoot": "auth-service/src",
     "targets": {
-      "build": {
-        "executor": "@nx/esbuild:esbuild",
-        "outputs": [
-          "{options.outputPath}"
-        ],
-        "defaultConfiguration": "production",
-        "options": {
-          "platform": "node",
-          "outputPath": "apps/auth-service/dist",
-          "format": [
-            "cjs"
-          ],
-          "bundle": false,
-          "main": "apps/auth-service/src/main.ts",
-          "tsConfig": "apps/auth-service/tsconfig.app.json",
-          "assets": [
-            "apps/auth-service/src/assets"
-          ],
-          "esbuildOptions": {
-            "sourcemap": true,
-            "outExtension": {
-              ".js": ".js"
-            }
-          }
-        },
-        "configurations": {
-          "development": {},
-          "production": {
-            "generateLockfile": true,
-            "esbuildOptions": {
-              "sourcemap": false,
-              "outExtension": {
-                ".js": ".js"
-              }
-            }
-          }
-        }
-      },
       "serve": {
         "executor": "@nx/js:node",
         "defaultConfiguration": "development",
@@ -66,20 +33,12 @@
         "options": {
           "passWithNoTests": true
         }
-      },
-      "docker-build": {
-        "dependsOn": [
-          "build"
-        ],
-        "command": "docker build -f apps/auth-service/Dockerfile . -t auth-service"
       }
     }
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/ejs": "^3.1.5",
-    "@types/express-http-proxy": "^1.6.6",
-    "@types/morgan": "^1.9.9",
     "@types/nodemailer": "^6.4.17",
     "@types/swagger-ui-express": "^4.1.8"
   }
