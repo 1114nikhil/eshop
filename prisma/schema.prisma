@@ -2,7 +2,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../generated/prisma"    Prisma normally generates inside node_modules/@prisma/client  by doing this I was getting error prisma generate
 }
 
 datasource db {

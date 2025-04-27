@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(cookieParser());
 //swagger Document
-app.use(swaggerUi.serve,swaggerUi.setup(swaggerDocument));
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 app.get("/docs-json",(req,res)=>{
     res.send({message:"Hello API"});
 });
@@ -30,7 +30,7 @@ app.use('/api',router);
 app.use(errorMiddleware);
 const port=process.env.port||6001;
 const server= app.listen(port,()=>{
-    console.log(`Authentication Service is running on http://localhost:${port}`);
+    console.log(`Authentication Service is running on http://localhost:${port}/api`);
     console.log(`Swagger Docs Available at http://localhost:${port}/docs`);
 });
 
