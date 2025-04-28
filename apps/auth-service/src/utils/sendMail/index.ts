@@ -6,12 +6,12 @@ import path from "path";
 dotenv.config();
 
 const transpoter = nodemailer.createTransport({
-  host: process.env.SMPT_HOST,
-  port: Number(process.env.SMPT_PORT) || 587,
-  service: process.env.SMPT_SERVICE,
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT) || 587,
+  service: process.env.SMTP_SERVICE,
   auth: {
-    user: process.env.SMPT_USER,
-    pass: process.env.SMPT_PASS,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 
@@ -22,6 +22,7 @@ const renderEmailTemplate = async (
 ): Promise<string> => {
   const templatePath = path.join(
     process.cwd(),
+    "apps",
     "auth-service",
     "src",
     "utils",

@@ -4,8 +4,7 @@ import redis from "@packages/libs/redis";
 import { sendEmail } from "./sendMail";
 import { NextFunction } from "express";
 
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;
-
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 //#region Validating register Data
 export const validateRegisterData = (
   data: any,
